@@ -16,7 +16,7 @@ There are two main components:
 - 🕒 Periodic invocation via `period.py`, suspended while gaming  
 - 🪄 Fully customizable  
 
-* Some of the common words are taken from google searches so words like 'iphone', proper nouns will also be shown
+\* Some of the common words are taken from google searches so words like 'iphone', proper nouns will also be shown
 ---
 
 ## 🖥️ Requirements
