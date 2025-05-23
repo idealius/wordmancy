@@ -6,6 +6,8 @@ There are two main components:
 - `randomwords.py`: Displays randomly selected English words, interactively or by argument.
 - `period.py`: A scheduler that triggers `randomwords.py` every 1–4 hours (or your custom interval), only when you’re **not gaming**.
 
+![Example](example.png)
+
 ---
 
 ## 📦 Features
