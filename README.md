@@ -88,6 +88,7 @@ python randomwords.py --count 20
 
 Runs `randomwords.py` at random intervals between 1 and 4 hours,  
 but pauses while any known game is running (e.g., `eldenring.exe`).
+
 Forces cmd window to the top if a fullscreen app isn't running.
 
 ```bash
