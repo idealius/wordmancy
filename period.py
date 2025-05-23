@@ -1,5 +1,6 @@
 import time
 import random
+import keyboard
 import subprocess
 import psutil
 import pygetwindow as gw
@@ -8,6 +9,9 @@ import win32con
 import win32console
 import win32process
 import os
+
+# For generating current requirements.txt - author:
+# pip freeze > requirements.txt
 
 def bring_self_to_front():
     """Bring the current console window to the foreground."""
@@ -50,12 +54,15 @@ def countdown(seconds):
         time_str = f"Next run in {hrs:02d}:{mins:02d}:{secs:02d}"
         print(f"\r{time_str}", end='', flush=True)
         time.sleep(1)
+        if keyboard.is_pressed('esc'):
+            print("Exiting...")
+            break
     print()  # new line after countdown ends
 
 # Main loop
 while True:
     os.system('cls')
-    print("Launching word generator...")
+    print("Launching word generator... Press ESC to exit.")
     run_word_script(word_count=10)
 
     delay = wait_random_interval()

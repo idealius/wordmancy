@@ -65,10 +65,9 @@ def print_colored_words(words):
             print(color + word, end='  ')
         print("\n")
 
-print(f"\nPress SPACEBAR to generate {word_count} random word(s). Press ESC to exit.")
-
 # If script is run with arguments, generate words once and exit
 if args.count is not None:
+    print(f"\nGenerating {word_count} random word(s).")
     word_batch = get_weighted_random_words(args.count)
     print_colored_words(word_batch)
     exit()
