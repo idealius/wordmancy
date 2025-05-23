@@ -1,17 +1,21 @@
 import time
 import random
 import keyboard
+import threading
 import subprocess
 import psutil
 import pygetwindow as gw
 import win32gui
 import win32con
 import win32console
-import win32process
 import os
 
 # For generating current requirements.txt - author:
 # pip freeze > requirements.txt
+
+# Globals to control thread flow
+exit_event = threading.Event()
+trigger_event = threading.Event()
 
 def bring_self_to_front():
     """Bring the current console window to the foreground."""
@@ -48,25 +52,43 @@ def wait_random_interval(min_hours=1, max_hours=4):
 
 def countdown(seconds):
     for remaining in range(seconds, 0, -1):
+        if exit_event.is_set():
+            print("\nExiting...")
+            exit()
+        if trigger_event.is_set():
+            print("\n[Ctrl+]] Manual word generation triggered.")
+            break
+
         hrs = remaining // 3600
         mins = (remaining % 3600) // 60
         secs = remaining % 60
         time_str = f"Next run in {hrs:02d}:{mins:02d}:{secs:02d}"
         print(f"\r{time_str}", end='', flush=True)
         time.sleep(1)
-        if keyboard.is_pressed('esc'):
-            print("Exiting...")
+    print()
+
+def key_listener():
+    while True:
+        if keyboard.is_pressed('ctrl+\\'):
+            exit_event.set()
             break
-    print()  # new line after countdown ends
+        if keyboard.is_pressed('ctrl+]'):
+            trigger_event.set()
+        time.sleep(0.1)
+
+# Start keyboard listener in the background
+threading.Thread(target=key_listener, daemon=True).start()
 
 # Main loop
 while True:
     os.system('cls')
-    print("Launching word generator... Press ESC to exit.")
+    print("Launching word generator... Press Ctrl+] to trigger early, Ctrl+\\ to exit.")
     run_word_script(word_count=10)
 
     delay = wait_random_interval()
     countdown(delay)
+
+    trigger_event.clear()
 
     while is_game_running():
         print("Game detected. Pausing...")
