@@ -6,13 +6,16 @@ There are two main components:
 - `randomwords.py`: Displays randomly selected English words, interactively or by argument.
 - `period.py`: A scheduler that triggers `randomwords.py` every 1–4 hours (or your custom interval), only when you’re **not gaming**.
 
+![Example](example.png)
+
 ---
 
 ## 📦 Features
 
 - 🔡 Random word generation with colorized output  
 - 🎛️ Command-line automation or interactive mode (press spacebar)  
-- 🧠 Mostly common words, with rare ones appearing 1 in 8 times  
+- 🧠 Mostly common words, with rare ones appearing 1 in 8 times
+  - Some common words come from Google search data, so names like "iPhone" or other proper nouns may appear
 - 🕒 Periodic invocation via `period.py`, suspended while gaming  
 - 🪄 Fully customizable  
 
@@ -106,7 +109,7 @@ It will:
 You can modify:
 - Word count
 - Interval randomness
-- Game detection list
+- Game detection list (also fullscreen app detection)
 - Word rarity ratio (in `randomwords.py`)
 - Colors used (via `colorama`)
 
