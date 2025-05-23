@@ -12,10 +12,11 @@ There are two main components:
 
 - 🔡 Random word generation with colorized output  
 - 🎛️ Command-line automation or interactive mode (press spacebar)  
-- 🧠 Mostly common words, with rare ones appearing 1 in 8 times  
+- 🧠 Mostly common words, with rare ones appearing 1 in 8 times*  
 - 🕒 Periodic invocation via `period.py`, suspended while gaming  
 - 🪄 Fully customizable  
 
+* Some of the common words are taken from google searches so words like 'iphone', proper nouns will also be shown
 ---
 
 ## 🖥️ Requirements
@@ -106,7 +107,7 @@ It will:
 You can modify:
 - Word count
 - Interval randomness
-- Game detection list
+- Game detection list (also fullscreen app detection)
 - Word rarity ratio (in `randomwords.py`)
 - Colors used (via `colorama`)
 
