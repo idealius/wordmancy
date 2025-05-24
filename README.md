@@ -1,6 +1,6 @@
 # 🔮 Wordmancy
 
-**Wordmancy** is a magical, mystical tool that conjures random English words at random intervals or on-demand. It's great for writing prompts, creativity warmups, vocabulary enrichment, or just a little linguistic chaos.
+**Wordmancy** is a magical, mystical tool that conjures random English words at random intervals or on-demand. It's great for inspiration.
 
 There are two main components:
 - `randomwords.py`: Displays randomly selected English words, interactively or by argument.
