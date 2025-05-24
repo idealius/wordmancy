@@ -134,8 +134,9 @@ You can modify:
 
 ## 🤖 Authorship Note
 
-This project — from its functionality to this very README — was written with guidance and prompting by the GitHub repo owner, using ChatGPT as a collaborative assistant.  
+This project — from its functionality to this very README — was written ENTIRELY via prompting by the GitHub repo owner, using ChatGPT as THE MAIN CONEWRITER.  
 Think of it as AI-enhanced spellcraft for word nerds.
+^ That's CGPT talking, from the author's opinon you should think of it as "just another -mancy."
 
 ---
 
