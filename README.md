@@ -70,8 +70,8 @@ python -c "import nltk; nltk.download('words'); nltk.download('names')"
 python randomwords.py
 ```
 
-- Press `SPACEBAR` to generate words.  
-- Press `ESC` to exit.
+- Press `CTRL+]` to generate words.  
+- Press `CTRL+\` to exit.
 
 #### Automatic Mode:
 
